@@ -1,9 +1,7 @@
 
 -- Query 1: JOIN
-SELECT 
-    b.booking_id,
-    u.name AS customer_name,
-    v.vehicle_name,
+
+SELECT  b.booking_id, u.name AS customer_name, v.vehicle_name,
     b.start_date,
     b.end_date,
      v.availability_status as status
@@ -15,6 +13,7 @@ INNER JOIN vehicles v ON b.vehicle_id = v.vehicle_id;
 
 
 --Query 2: EXISTS
+
 SELECT vehicle_id,vehicle_name AS name,vehicle_type AS type,model,registration_number,rental_price,availability_status AS status
 FROM vehicles v
 WHERE NOT EXISTS (
